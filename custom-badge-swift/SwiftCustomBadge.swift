@@ -68,9 +68,9 @@ class SwiftCustomBadge: UIView {
   class func customBadgeWithString(badgeString: String, withStringColor stringColor:UIColor,
     withInsetColor insetColor:UIColor,
     withBadgeFrame badgeFrameYesNo:Bool, withBadgeFrameColor frameColor:UIColor,
-    withScale scale:CGFloat, withShining shining:Bool) -> CustomBadge
+    withScale scale:CGFloat, withShining shining:Bool) -> SwiftCustomBadge
   {
-    return CustomBadge(badgeString: badgeString, withStringColor: stringColor,
+    return SwiftCustomBadge(badgeString: badgeString, withStringColor: stringColor,
       withInsetColor: insetColor, withBadgeFrame: badgeFrameYesNo,
       withBadgeFrameColor: frameColor, withScale: scale, withShining: shining)
   }
