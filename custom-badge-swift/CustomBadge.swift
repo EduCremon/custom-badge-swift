@@ -48,7 +48,7 @@ class CustomBadge: UIView {
       
     super.init(frame: CGRect(x: 0, y: 0, width: initialSize, height: initialSize))
       
-    setTranslatesAutoresizingMaskIntoConstraints(false)
+    self.translatesAutoresizingMaskIntoConstraints = false
     
     contentScaleFactor = UIScreen.mainScreen().scale
     backgroundColor = UIColor.clearColor()
@@ -80,8 +80,8 @@ class CustomBadge: UIView {
     let stringSize = (badgeText as NSString).sizeWithAttributes(
       [NSFontAttributeName:UIFont.boldSystemFontOfSize(12)])
     
-    if countElements(badgeText) >= 2 {
-      let flexSpace:CGFloat = CGFloat(countElements(badgeText))
+    if badgeText.characters.count >= 2 {
+      let flexSpace:CGFloat = CGFloat(badgeText.characters.count)
       let rectWidth:CGFloat = initialSize + (stringSize.width + flexSpace)
       let rectHeight:CGFloat = initialSize
       
@@ -150,7 +150,7 @@ class CustomBadge: UIView {
     let maxY = CGRectGetMaxY(rect) - padding(forRect: rect)
     let ePoint = CGPoint(x: 0, y: maxY)
    
-    CGContextDrawLinearGradient (context, gradient, sPoint, ePoint, 0)
+    CGContextDrawLinearGradient (context, gradient, sPoint, ePoint, [])
     
     CGContextRestoreGState(context)
   }
@@ -173,7 +173,7 @@ class CustomBadge: UIView {
   }
   
   override func drawRect(rect: CGRect) {
-    let context = UIGraphicsGetCurrentContext()
+    let context = UIGraphicsGetCurrentContext()!
    
     drawRoundedRectWithContext(context, withRect: rect)
   
@@ -188,7 +188,7 @@ class CustomBadge: UIView {
     if !badgeText.isEmpty {
       var sizeOfFont = 13.5 * badgeScaleFactor
     
-      if countElements(badgeText) < 2 {
+      if badgeText.characters.count < 2 {
         sizeOfFont += sizeOfFont * 0.20
       }
     
