@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   # s.watchos.deployment_target = "2.0"
   s.source       = { :git => "https://github.com/EduCremon/custom-badge-swift.git" }
   s.source_files  = "custom-badge-swift/S*.swift"
-  s.exclude_files = "custom-badge-swift/**"
+  #s.exclude_files = "custom-badge-swift/**"
   # s.public_header_files = "Classes/**/*.h"
   # s.requires_arc = true
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
