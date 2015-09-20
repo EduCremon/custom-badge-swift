@@ -1,5 +1,5 @@
 //
-//  CustomBadge.swift
+//  SwiftCustomBadge.swift
 //
 //  This code is based on Objective-C version created by Sascha Paulus www.spaulus.com.
 //  https://github.com/ckteebe/CustomBadge
@@ -21,7 +21,7 @@
 
 import UIKit
 
-class CustomBadge: UIView {
+class SwiftCustomBadge: UIView {
   private var badgeText: String
   private let badgeTextColor: UIColor
   private let badgeFrame: Bool

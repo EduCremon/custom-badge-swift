@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  s.name         = "CustomBadge"
-  s.version      = "0.0.2"
+  s.name         = "SwiftCustomBadge"
+  s.version      = "0.0.3"
   s.summary      = "iOS badge indicator written in Swift 2"
   s.homepage     = "https://github.com/EduCremon/custom-badge-swift"
   s.license      = "MIT (example)"
@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   s.source       = { :git => "https://github.com/EduCremon/custom-badge-swift.git" }
-  s.source_files  = "custom-badge-swift/*.swift"
-  #s.exclude_files = "Classes/Exclude"
+  s.source_files  = "custom-badge-swift/S*.swift"
+  s.exclude_files = "custom-badge-swift/**"
   # s.public_header_files = "Classes/**/*.h"
   # s.requires_arc = true
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
