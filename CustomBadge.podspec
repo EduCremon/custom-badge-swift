@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  s.name         = "CustomBadgeSwift2"
-  s.version      = "0.0.1"
+  s.name         = "CustomBadge"
+  s.version      = "0.0.2"
   s.summary      = "iOS badge indicator written in Swift 2"
   s.homepage     = "https://github.com/EduCremon/custom-badge-swift"
   s.license      = "MIT (example)"
