@@ -1,5 +1,5 @@
 //
-//  SwiftCustomBadge.swift
+//  CustomBadge.swift
 //
 //  This code is based on Objective-C version created by Sascha Paulus www.spaulus.com.
 //  https://github.com/ckteebe/CustomBadge
@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SwiftCustomBadge: UIView {
+public class CustomBadge: UIView {
   private var badgeText: String
   private let badgeTextColor: UIColor
   private let badgeFrame: Bool
@@ -55,7 +55,7 @@ class SwiftCustomBadge: UIView {
     invalidateIntrinsicContentSize()
   }
 
-  required init(coder aDecoder: NSCoder) {
+  required public init(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
@@ -65,17 +65,17 @@ class SwiftCustomBadge: UIView {
   }
   
   // Creates a Badge with a given Text, Text Color, Inset Color, Frame (YES/NO) and Frame Color
-  class func customBadgeWithString(badgeString: String, withStringColor stringColor:UIColor,
+  public class func customBadgeWithString(badgeString: String, withStringColor stringColor:UIColor,
     withInsetColor insetColor:UIColor,
     withBadgeFrame badgeFrameYesNo:Bool, withBadgeFrameColor frameColor:UIColor,
-    withScale scale:CGFloat, withShining shining:Bool) -> SwiftCustomBadge
+    withScale scale:CGFloat, withShining shining:Bool) -> CustomBadge
   {
-    return SwiftCustomBadge(badgeString: badgeString, withStringColor: stringColor,
+    return CustomBadge(badgeString: badgeString, withStringColor: stringColor,
       withInsetColor: insetColor, withBadgeFrame: badgeFrameYesNo,
       withBadgeFrameColor: frameColor, withScale: scale, withShining: shining)
   }
   
-  override func intrinsicContentSize() -> CGSize {
+  override public func intrinsicContentSize() -> CGSize {
     var size: CGSize
     let stringSize = (badgeText as NSString).sizeWithAttributes(
       [NSFontAttributeName:UIFont.boldSystemFontOfSize(12)])
@@ -93,7 +93,7 @@ class SwiftCustomBadge: UIView {
     return size
   }
   
-  override func alignmentRectInsets() -> UIEdgeInsets {
+  override public func alignmentRectInsets() -> UIEdgeInsets {
     let puffer = padding(forRect: bounds)
     return UIEdgeInsets(top: puffer, left: puffer, bottom: puffer, right: puffer)
   }
@@ -172,7 +172,7 @@ class SwiftCustomBadge: UIView {
     CGContextStrokePath(context) // Clear the current path
   }
   
-  override func drawRect(rect: CGRect) {
+  override public func drawRect(rect: CGRect) {
     let context = UIGraphicsGetCurrentContext()!
    
     drawRoundedRectWithContext(context, withRect: rect)

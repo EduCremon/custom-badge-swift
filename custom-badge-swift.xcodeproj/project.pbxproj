@@ -13,8 +13,8 @@
 		2B2D483D19DA568300706B82 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B2D483C19DA568300706B82 /* Images.xcassets */; };
 		2B2D484019DA568300706B82 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B2D483E19DA568300706B82 /* LaunchScreen.xib */; };
 		2B2D484C19DA568300706B82 /* custom_badge_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2D484B19DA568300706B82 /* custom_badge_swiftTests.swift */; };
-		2B2D485619DA56DD00706B82 /* CustomBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2D485519DA56DD00706B82 /* CustomBadge.swift */; };
 		2B2D485819DA878600706B82 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B2D485719DA878600706B82 /* Default-568h@2x.png */; };
+		34484DE51BAF4741006107E8 /* SwiftCustomBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34484DE41BAF4741006107E8 /* SwiftCustomBadge.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,8 @@
 		2B2D484519DA568300706B82 /* custom-badge-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "custom-badge-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2D484A19DA568300706B82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B2D484B19DA568300706B82 /* custom_badge_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = custom_badge_swiftTests.swift; sourceTree = "<group>"; };
-		2B2D485519DA56DD00706B82 /* CustomBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBadge.swift; sourceTree = "<group>"; };
 		2B2D485719DA878600706B82 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		34484DE41BAF4741006107E8 /* SwiftCustomBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCustomBadge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +82,8 @@
 		2B2D483219DA568300706B82 /* custom-badge-swift */ = {
 			isa = PBXGroup;
 			children = (
-				2B2D485519DA56DD00706B82 /* CustomBadge.swift */,
 				2B2D483519DA568300706B82 /* AppDelegate.swift */,
+				34484DE41BAF4741006107E8 /* SwiftCustomBadge.swift */,
 				2B2D483719DA568300706B82 /* ViewController.swift */,
 				2B2D483919DA568300706B82 /* Main.storyboard */,
 				2B2D483C19DA568300706B82 /* Images.xcassets */,
@@ -162,11 +162,13 @@
 		2B2D482819DA568300706B82 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "The Exchange Group Pty Ltd";
 				TargetAttributes = {
 					2B2D482F19DA568300706B82 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 9M5D296L59;
 					};
 					2B2D484419DA568300706B82 = {
 						CreatedOnToolsVersion = 6.0;
@@ -221,7 +223,7 @@
 			files = (
 				2B2D483819DA568300706B82 /* ViewController.swift in Sources */,
 				2B2D483619DA568300706B82 /* AppDelegate.swift in Sources */,
-				2B2D485619DA56DD00706B82 /* CustomBadge.swift in Sources */,
+				34484DE51BAF4741006107E8 /* SwiftCustomBadge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +285,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -346,9 +349,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "custom-badge-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -357,9 +362,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "custom-badge-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -378,6 +385,7 @@
 				);
 				INFOPLIST_FILE = "custom-badge-swiftTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/custom-badge-swift.app/custom-badge-swift";
 			};
@@ -393,6 +401,7 @@
 				);
 				INFOPLIST_FILE = "custom-badge-swiftTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/custom-badge-swift.app/custom-badge-swift";
 			};
@@ -417,6 +426,7 @@
 				2B2D485119DA568300706B82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B2D485219DA568300706B82 /* Build configuration list for PBXNativeTarget "custom-badge-swiftTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +435,7 @@
 				2B2D485419DA568300706B82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
